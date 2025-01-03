@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import '../App.css';
 
 const CadastroForm = ({ onAddProduct }) => {
     const [nome, setNome] = useState("");
@@ -20,39 +21,30 @@ const CadastroForm = ({ onAddProduct }) => {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <h2>Cadastro de Produto</h2>
-            <label>
-                Nome do Produto:
+        <div className="container">
+            <form onSubmit={handleSubmit}>
+                <h2>Cadastro de Produto</h2>
+                <label>Nome do Produto:</label>
                 <input
                     type="text"
                     value={nome}
                     onChange={(e) => setNome(e.target.value)}
                     required
                 />
-            </label>
-            <br />
-            <label>
-                Descrição do Produto:
+                <label>Descrição do Produto:</label>
                 <input
                     type="text"
                     value={descricao}
                     onChange={(e) => setDescricao(e.target.value)}
                 />
-            </label>
-            <br />
-            <label>
-                Valor do Produto:
+                <label>Valor do Produto:</label>
                 <input
                     type="number"
                     value={valor}
                     onChange={(e) => setValor(e.target.value)}
                     required
                 />
-            </label>
-            <br />
-            <label>
-                Disponível para Venda:
+                <label>Disponível para Venda:</label>
                 <select
                     value={disponivel}
                     onChange={(e) => setDisponivel(e.target.value)}
@@ -60,10 +52,9 @@ const CadastroForm = ({ onAddProduct }) => {
                     <option value="sim">Sim</option>
                     <option value="não">Não</option>
                 </select>
-            </label>
-            <br />
-            <button type="submit">Cadastrar</button>
-        </form>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
     );
 };
 

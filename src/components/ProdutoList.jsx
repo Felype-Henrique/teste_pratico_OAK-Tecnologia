@@ -1,13 +1,14 @@
 import React from "react";
+import '../App.css';
 
 const ProdutoList = ({ produtos, onNewProduct }) => {
     const produtosOrdenados = [...produtos].sort((a, b) => a.valor - b.valor);
 
     return (
-        <div>
+        <div className="container">
             <h2>Listagem de Produtos</h2>
             <button onClick={onNewProduct}>Cadastrar Novo Produto</button>
-            <table border="1" cellPadding="10">
+            <table>
                 <thead>
                     <tr>
                         <th>Nome</th>

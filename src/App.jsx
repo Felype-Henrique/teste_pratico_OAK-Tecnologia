@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import CadastroForm from "./components/CadastroForm";
 import ProdutoList from "./components/ProdutoList";
+import './App.css';
 
 const App = () => {
   const [produtos, setProdutos] = useState([]);
@@ -16,7 +17,8 @@ const App = () => {
   };
 
   return (
-    <div>
+    <div className="container">
+      <h1>Gestão de Produtos</h1>
       {isCadastroVisible ? (
         <CadastroForm onAddProduct={handleAddProduct} />
       ) : (
